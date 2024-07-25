@@ -1,0 +1,1047 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/"
+     xml:base="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ibs="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/">
+        <dc:createor>Ibtida &amp; Syed</dc:createor>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/createor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/createor"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasPizza -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasPizza">
+        <owl:inverseOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isServedAt"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza"/>
+        <rdfs:comment>Property which defines restaurant having pizza</rdfs:comment>
+        <rdfs:label>has_Pizza</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasRestaurant -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasRestaurant">
+        <owl:inverseOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isLocatedAt"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/City"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:comment>Properties that defines location having restaurant</rdfs:comment>
+        <rdfs:label>has_Restaurant</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasTopping -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasTopping">
+        <owl:inverseOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isToppingof"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Topping"/>
+        <rdfs:comment>Defines pizza having toppings and types</rdfs:comment>
+        <rdfs:label>has_Topping</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isLocatedAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isLocatedAt">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/City"/>
+        <rdfs:comment>Defines the place and the location</rdfs:comment>
+        <rdfs:label>is_Located_At</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isServedAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isServedAt">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:comment>Defines the place where the food is served at</rdfs:comment>
+        <rdfs:label>is_Served_At</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isToppingof -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isToppingof">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Topping"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza"/>
+        <rdfs:comment>Name of the pizza with the topping</rdfs:comment>
+        <rdfs:label>is_Topping_of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasAddress">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>Address of the restaurant</rdfs:comment>
+        <rdfs:label>has_Address</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasPostCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasPostCode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>Post code of the location</rdfs:comment>
+        <rdfs:label>has_Post_Code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasPrice">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Price is in USD</rdfs:comment>
+        <rdfs:label>has_Price</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/AmericanRestaurant -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/AmericanRestaurant">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:comment xml:lang="en">Restaurant which mainly serves American foods</rdfs:comment>
+        <rdfs:label xml:lang="en">American_Restaurant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/AsianRestaurant -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/AsianRestaurant">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:comment xml:lang="en">Restaurant which mainly serves Asian foods</rdfs:comment>
+        <rdfs:label xml:lang="en">Asian_Restaurant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bangla_Food -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bangla_Food">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:comment xml:lang="en">Restaurant serves Ibtida and Syed&apos;s countries food</rdfs:comment>
+        <rdfs:label xml:lang="en">Bangla_Food</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/BreakfastSpot -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/BreakfastSpot">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:comment xml:lang="en">Restaurant which mainly serves breakfast</rdfs:comment>
+        <rdfs:label xml:lang="en">Breakfast_Spot</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/BurgerJoint -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/BurgerJoint">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:comment xml:lang="en">Restaurant which mainly serves burgers</rdfs:comment>
+        <rdfs:label xml:lang="en">Burger_Joint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/CheesePizza -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/CheesePizza">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/CheeseTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Pizza where main ingredient is cheese</rdfs:comment>
+        <rdfs:label xml:lang="en">Cheese_Pizza</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/CheeseTopping -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/CheeseTopping">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Topping"/>
+        <rdfs:comment xml:lang="en">Food toppings where cheese is the main ingredient</rdfs:comment>
+        <rdfs:label xml:lang="en">Cheese_Topping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/City -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/City">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isLocatedAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Country"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isLocatedAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/State"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A large town</rdfs:comment>
+        <rdfs:label xml:lang="en">City</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/CoffeeShop -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/CoffeeShop">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:comment xml:lang="en">Restaurant which mainly serves coffee</rdfs:comment>
+        <rdfs:label xml:lang="en">Coffee_Shop</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Country -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Country">
+        <rdfs:comment xml:lang="en">Place which has its own law and regulations</rdfs:comment>
+        <rdfs:label xml:lang="en">Country</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/ItalianRestaurant -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/ItalianRestaurant">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:comment xml:lang="en">Restaurant which mainly serves Italian foods</rdfs:comment>
+        <rdfs:label xml:lang="en">Italian_Restaurant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MeatPizza -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MeatPizza">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MeatTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Pizza where main ingredient is meat</rdfs:comment>
+        <rdfs:label xml:lang="en">Meat_Pizza</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MeatTopping -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MeatTopping">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Topping"/>
+        <rdfs:comment xml:lang="en">Food toppings where meat is the main ingredient</rdfs:comment>
+        <rdfs:label xml:lang="en">Meat_Topping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MediterranianRestaurant -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MediterranianRestaurant">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:comment xml:lang="en">Restaurant which mainly serves Mediterranian foods</rdfs:comment>
+        <rdfs:label xml:lang="en">Mediterranian_Restaurant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MexicanRestaurant -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MexicanRestaurant">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:comment xml:lang="en">Restaurant which mainly serves Mexican foods</rdfs:comment>
+        <rdfs:label xml:lang="en">Mexican_Restaurant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Topping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isServedAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasPrice"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Topping"/>
+        <rdfs:comment xml:lang="en">An italian dish</rdfs:comment>
+        <rdfs:label xml:lang="en">Pizza</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza_place -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza_place">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:comment xml:lang="en">Restaurant which mainly serves Pizzas</rdfs:comment>
+        <rdfs:label xml:lang="en">Pizza_Place</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pub -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pub">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:comment xml:lang="en">Restaurant which mainly serves foods and drinks</rdfs:comment>
+        <rdfs:label xml:lang="en">Pub</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasPizza"/>
+                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isLocatedAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/City"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isLocatedAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Country"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isLocatedAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/State"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Place where people goes to eat food</rdfs:comment>
+        <rdfs:label xml:lang="en">Restaurant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/SeafoodPizza -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/SeafoodPizza">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/SeafoodTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Pizza where main ingredient seafood</rdfs:comment>
+        <rdfs:label xml:lang="en">Seafood_Pizza</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/SeafoodTopping -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/SeafoodTopping">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Topping"/>
+        <rdfs:comment xml:lang="en">Food toppings where seafood is the main ingredient</rdfs:comment>
+        <rdfs:label xml:lang="en">Seafood_Topping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Special_Pizza -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Special_Pizza">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Special_Topping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Pizza where main ingredient is special items</rdfs:comment>
+        <rdfs:label xml:lang="en">Special_Pizza</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Special_Topping -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Special_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/SportsBar -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/SportsBar">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:comment xml:lang="en">Restaurant which mainly serves foods and drinks and sports are televised</rdfs:comment>
+        <rdfs:label xml:lang="en">Sports_Bar</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/State -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/State">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isLocatedAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Country"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Place in a country</rdfs:comment>
+        <rdfs:label xml:lang="en">State</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Topping -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Topping">
+        <rdfs:comment xml:lang="en">Ingredients used on top of foods</rdfs:comment>
+        <rdfs:label xml:lang="en">Topping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/University -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/University">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant"/>
+        <rdfs:comment xml:lang="en">Place people goes to study</rdfs:comment>
+        <rdfs:label xml:lang="en">University</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/VegetarianPizza -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/VegetarianPizza">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasTopping"/>
+                <owl:allValuesFrom rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/VegetarianTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Pizza where main ingredient is vegetables</rdfs:comment>
+        <rdfs:label xml:lang="en">Vegetarian_Pizza</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/VegetarianTopping -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/VegetarianTopping">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Topping"/>
+        <rdfs:comment xml:lang="en">Food toppings where vegetables is the main ingredient</rdfs:comment>
+        <rdfs:label xml:lang="en">Vegetarian_Topping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bangla_Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bangla_Pizza">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Special_Pizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Ibtida_Syed_Restaurant"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.5</hasPrice>
+        <rdfs:comment>Created pizza</rdfs:comment>
+        <rdfs:label>Bangla_Pizza</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bangladesh -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bangladesh">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Country"/>
+        <rdfs:comment>Created Country</rdfs:comment>
+        <rdfs:label>Bangladesh</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bend -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bend">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/City"/>
+        <hasRestaurant rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Little_Pizza_Paradise"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Oregon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bianca_Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bianca_Pizza">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/VegetarianPizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Little_Pizza_Paradise"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">22.5</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bravo_Pizza_Hollywood -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bravo_Pizza_Hollywood">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza_place"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Cheese_Pizza"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Hawaiian_Pizza"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Meat_Lover_Pizza"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza_Sub"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Super_Pizza_Sub"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Veggie_Pizza"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Los_Angeles"/>
+        <hasAddress>5142 Hollywood Blvd</hasAddress>
+        <hasPostCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90027</hasPostCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Brigham_Young_University -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Brigham_Young_University">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/University"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/House_made_pizza"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pepperoni_Pizza"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza_Bagel"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Provo"/>
+        <hasAddress>1 N University Hl</hasAddress>
+        <hasPostCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">84602</hasPostCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/California -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/California">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/State"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/USA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Cheese_Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Cheese_Pizza">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/CheesePizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bravo_Pizza_Hollywood"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Little_Pizza_Paradise"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Roadhouse_Cafe"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.99</hasPrice>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18.95</hasPrice>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.95</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Chicago -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Chicago">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/City"/>
+        <hasRestaurant rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Francesca&apos;s_on_Chestnut"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Illinois"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Create_your_own_pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Create_your_own_pizza">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Special_Pizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Lucky&apos;s_Pub"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">9.95</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Dhaka -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Dhaka">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/City"/>
+        <hasRestaurant rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Ibtida_Syed_Restaurant"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bangladesh"/>
+        <rdfs:comment>Created City</rdfs:comment>
+        <rdfs:label>Dhaka</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Hawaiian_Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Hawaiian_Pizza">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MeatPizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bravo_Pizza_Hollywood"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">11.99</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/House_made_pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/House_made_pizza">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Special_Pizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Brigham_Young_University"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Houston -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Houston">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/City"/>
+        <hasRestaurant rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Lucky&apos;s_Pub"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Texas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Hyannis -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Hyannis">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/City"/>
+        <hasRestaurant rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Roadhouse_Cafe"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Maine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Ibtida_Syed_Restaurant -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Ibtida_Syed_Restaurant">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bangla_Food"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bangla_Pizza"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Dhaka"/>
+        <hasAddress>Gulshan</hasAddress>
+        <hasPostCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1217</hasPostCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Illinois -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Illinois">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/State"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/USA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Little_Pizza_Paradise -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Little_Pizza_Paradise">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza_place"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bianca_Pizza"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Cheese_Pizza"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bend"/>
+        <hasAddress>Cascade Village Mall Across From Target</hasAddress>
+        <hasPostCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">97701</hasPostCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Los_Angeles -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Los_Angeles">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/City"/>
+        <hasRestaurant rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bravo_Pizza_Hollywood"/>
+        <hasRestaurant rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/The_Brentwood"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/California"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Maine -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Maine">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/State"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/USA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Margherita_Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Margherita_Pizza">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/CheesePizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/The_Brentwood"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Francesca&apos;s_on_Chestnut"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.99</hasPrice>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Meat_Lover_Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Meat_Lover_Pizza">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MeatPizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bravo_Pizza_Hollywood"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16.99</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Mushroom_Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Mushroom_Pizza">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/VegetarianPizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/The_Brentwood"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Oregon -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Oregon">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/State"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/USA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pepperoni_Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pepperoni_Pizza">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MeatPizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Brigham_Young_University"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Roadhouse_Cafe"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.95</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza_Bagel -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza_Bagel">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Special_Pizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Brigham_Young_University"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza_Sub -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza_Sub">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Special_Pizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bravo_Pizza_Hollywood"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.99</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Provo -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Provo">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/City"/>
+        <hasRestaurant rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Brigham_Young_University"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Utah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Puttanesca_Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Puttanesca_Pizza">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/SeafoodPizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/The_Brentwood"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Roadhouse_Cafe -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Roadhouse_Cafe">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/AmericanRestaurant"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Hyannis"/>
+        <hasAddress>478 South St</hasAddress>
+        <hasPostCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2601</hasPostCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Salami_Piccante_Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Salami_Piccante_Pizza">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MeatPizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/The_Brentwood"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Schiacchiata_Alla_Toscana_Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Schiacchiata_Alla_Toscana_Pizza">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Special_Pizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Francesca&apos;s_on_Chestnut"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Super_Pizza_Sub -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Super_Pizza_Sub">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Special_Pizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bravo_Pizza_Hollywood"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.99</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Texas -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Texas">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/State"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/USA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/The_Brentwood -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/The_Brentwood">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/AmericanRestaurant"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Margherita_Pizza"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Mushroom_Pizza"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Puttanesca_Pizza"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Salami_Piccante_Pizza"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/White_Truffle_Meat_Sauce_Pizza"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Los_Angeles"/>
+        <hasAddress>148 S Barrington Ave</hasAddress>
+        <hasPostCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90049</hasPostCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/USA -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/USA">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Utah -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Utah">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/State"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/USA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Veggie_Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Veggie_Pizza">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/VegetarianPizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bravo_Pizza_Hollywood"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">16.99</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/White_Truffle_Meat_Sauce_Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/White_Truffle_Meat_Sauce_Pizza">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MeatPizza"/>
+        <isServedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/The_Brentwood"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Francesca&apos;s_on_Chestnut -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Francesca&apos;s_on_Chestnut">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/ItalianRestaurant"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Chicago"/>
+        <hasAddress>200 E Chestnut St</hasAddress>
+        <hasPostCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60611</hasPostCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Lucky&apos;s_Pub -->
+
+    <owl:NamedIndividual rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Lucky&apos;s_Pub">
+        <rdf:type rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pub"/>
+        <hasPizza rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Create_your_own_pizza"/>
+        <isLocatedAt rdf:resource="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Houston"/>
+        <hasAddress>801 Saint Emanuel St</hasAddress>
+        <hasPostCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">77003</hasPostCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/AmericanRestaurant"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/AsianRestaurant"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/BreakfastSpot"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/BurgerJoint"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/CoffeeShop"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/ItalianRestaurant"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MediterranianRestaurant"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MexicanRestaurant"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza_place"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pub"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/SportsBar"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/University"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/CheesePizza"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MeatPizza"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/SeafoodPizza"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/VegetarianPizza"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/CheeseTopping"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MeatTopping"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/SeafoodTopping"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/VegetarianTopping"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

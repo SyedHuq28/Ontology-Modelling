@@ -1,0 +1,731 @@
+@prefix : <http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ibs: <http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/> .
+
+<http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/> rdf:type owl:Ontology ;
+                                                         dc:createor "Ibtida & Syed" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/createor
+dc:createor rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasPizza
+ibs:hasPizza rdf:type owl:ObjectProperty ;
+             owl:inverseOf ibs:isServedAt ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain ibs:Restaurant ;
+             rdfs:range ibs:Pizza ;
+             rdfs:comment "Property which defines restaurant having pizza" ;
+             rdfs:label "has_Pizza" .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasRestaurant
+ibs:hasRestaurant rdf:type owl:ObjectProperty ;
+                  owl:inverseOf ibs:isLocatedAt ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain ibs:City ;
+                  rdfs:range ibs:Restaurant ;
+                  rdfs:comment "Properties that defines location having restaurant" ;
+                  rdfs:label "has_Restaurant" .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasTopping
+ibs:hasTopping rdf:type owl:ObjectProperty ;
+               owl:inverseOf ibs:isToppingof ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain ibs:Pizza ;
+               rdfs:range ibs:Topping ;
+               rdfs:comment "Defines pizza having toppings and types" ;
+               rdfs:label "has_Topping" .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isLocatedAt
+ibs:isLocatedAt rdf:type owl:ObjectProperty ,
+                         owl:TransitiveProperty ;
+                rdfs:domain ibs:Restaurant ;
+                rdfs:range ibs:City ;
+                rdfs:comment "Defines the place and the location" ;
+                rdfs:label "is_Located_At" .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isServedAt
+ibs:isServedAt rdf:type owl:ObjectProperty ,
+                        owl:InverseFunctionalProperty ;
+               rdfs:domain ibs:Pizza ;
+               rdfs:range ibs:Restaurant ;
+               rdfs:comment "Defines the place where the food is served at" ;
+               rdfs:label "is_Served_At" .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/isToppingof
+ibs:isToppingof rdf:type owl:ObjectProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain ibs:Topping ;
+                rdfs:range ibs:Pizza ;
+                rdfs:comment "Name of the pizza with the topping" ;
+                rdfs:label "is_Topping_of" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasAddress
+ibs:hasAddress rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain ibs:Restaurant ;
+               rdfs:range rdfs:Literal ;
+               rdfs:comment "Address of the restaurant" ;
+               rdfs:label "has_Address" .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasPostCode
+ibs:hasPostCode rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain ibs:Restaurant ;
+                rdfs:range rdfs:Literal ;
+                rdfs:comment "Post code of the location" ;
+                rdfs:label "has_Post_Code" .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/hasPrice
+ibs:hasPrice rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain ibs:Pizza ;
+             rdfs:range xsd:float ;
+             rdfs:comment "Price is in USD" ;
+             rdfs:label "has_Price" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/AmericanRestaurant
+ibs:AmericanRestaurant rdf:type owl:Class ;
+                       rdfs:subClassOf ibs:Restaurant ;
+                       rdfs:comment "Restaurant which mainly serves American foods"@en ;
+                       rdfs:label "American_Restaurant"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/AsianRestaurant
+ibs:AsianRestaurant rdf:type owl:Class ;
+                    rdfs:subClassOf ibs:Restaurant ;
+                    rdfs:comment "Restaurant which mainly serves Asian foods"@en ;
+                    rdfs:label "Asian_Restaurant"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bangla_Food
+ibs:Bangla_Food rdf:type owl:Class ;
+                rdfs:subClassOf ibs:Restaurant ;
+                rdfs:comment "Restaurant serves Ibtida and Syed's countries food"@en ;
+                rdfs:label "Bangla_Food"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/BreakfastSpot
+ibs:BreakfastSpot rdf:type owl:Class ;
+                  rdfs:subClassOf ibs:Restaurant ;
+                  rdfs:comment "Restaurant which mainly serves breakfast"@en ;
+                  rdfs:label "Breakfast_Spot"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/BurgerJoint
+ibs:BurgerJoint rdf:type owl:Class ;
+                rdfs:subClassOf ibs:Restaurant ;
+                rdfs:comment "Restaurant which mainly serves burgers"@en ;
+                rdfs:label "Burger_Joint"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/CheesePizza
+ibs:CheesePizza rdf:type owl:Class ;
+                rdfs:subClassOf ibs:Pizza ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty ibs:hasTopping ;
+                                  owl:someValuesFrom ibs:CheeseTopping
+                                ] ;
+                rdfs:comment "Pizza where main ingredient is cheese"@en ;
+                rdfs:label "Cheese_Pizza"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/CheeseTopping
+ibs:CheeseTopping rdf:type owl:Class ;
+                  rdfs:subClassOf ibs:Topping ;
+                  rdfs:comment "Food toppings where cheese is the main ingredient"@en ;
+                  rdfs:label "Cheese_Topping"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/City
+ibs:City rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty ibs:isLocatedAt ;
+                           owl:someValuesFrom ibs:Country
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ibs:isLocatedAt ;
+                           owl:someValuesFrom ibs:State
+                         ] ;
+         rdfs:comment "A large town"@en ;
+         rdfs:label "City"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/CoffeeShop
+ibs:CoffeeShop rdf:type owl:Class ;
+               rdfs:subClassOf ibs:Restaurant ;
+               rdfs:comment "Restaurant which mainly serves coffee"@en ;
+               rdfs:label "Coffee_Shop"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Country
+ibs:Country rdf:type owl:Class ;
+            rdfs:comment "Place which has its own law and regulations"@en ;
+            rdfs:label "Country"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/ItalianRestaurant
+ibs:ItalianRestaurant rdf:type owl:Class ;
+                      rdfs:subClassOf ibs:Restaurant ;
+                      rdfs:comment "Restaurant which mainly serves Italian foods"@en ;
+                      rdfs:label "Italian_Restaurant"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MeatPizza
+ibs:MeatPizza rdf:type owl:Class ;
+              rdfs:subClassOf ibs:Pizza ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ibs:hasTopping ;
+                                owl:someValuesFrom ibs:MeatTopping
+                              ] ;
+              rdfs:comment "Pizza where main ingredient is meat"@en ;
+              rdfs:label "Meat_Pizza"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MeatTopping
+ibs:MeatTopping rdf:type owl:Class ;
+                rdfs:subClassOf ibs:Topping ;
+                rdfs:comment "Food toppings where meat is the main ingredient"@en ;
+                rdfs:label "Meat_Topping"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MediterranianRestaurant
+ibs:MediterranianRestaurant rdf:type owl:Class ;
+                            rdfs:subClassOf ibs:Restaurant ;
+                            rdfs:comment "Restaurant which mainly serves Mediterranian foods"@en ;
+                            rdfs:label "Mediterranian_Restaurant"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/MexicanRestaurant
+ibs:MexicanRestaurant rdf:type owl:Class ;
+                      rdfs:subClassOf ibs:Restaurant ;
+                      rdfs:comment "Restaurant which mainly serves Mexican foods"@en ;
+                      rdfs:label "Mexican_Restaurant"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza
+ibs:Pizza rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty ibs:hasTopping ;
+                            owl:someValuesFrom ibs:Topping
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ibs:isServedAt ;
+                            owl:someValuesFrom ibs:Restaurant
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ibs:hasPrice ;
+                            owl:someValuesFrom xsd:float
+                          ] ;
+          owl:disjointWith ibs:Topping ;
+          rdfs:comment "An italian dish"@en ;
+          rdfs:label "Pizza"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza_place
+ibs:Pizza_place rdf:type owl:Class ;
+                rdfs:subClassOf ibs:Restaurant ;
+                rdfs:comment "Restaurant which mainly serves Pizzas"@en ;
+                rdfs:label "Pizza_Place"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pub
+ibs:Pub rdf:type owl:Class ;
+        rdfs:subClassOf ibs:Restaurant ;
+        rdfs:comment "Restaurant which mainly serves foods and drinks"@en ;
+        rdfs:label "Pub"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Restaurant
+ibs:Restaurant rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty ibs:hasPizza ;
+                                 owl:someValuesFrom ibs:Pizza
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ibs:isLocatedAt ;
+                                 owl:someValuesFrom ibs:City
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ibs:isLocatedAt ;
+                                 owl:someValuesFrom ibs:Country
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty ibs:isLocatedAt ;
+                                 owl:someValuesFrom ibs:State
+                               ] ;
+               rdfs:comment "Place where people goes to eat food"@en ;
+               rdfs:label "Restaurant"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/SeafoodPizza
+ibs:SeafoodPizza rdf:type owl:Class ;
+                 rdfs:subClassOf ibs:Pizza ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty ibs:hasTopping ;
+                                   owl:someValuesFrom ibs:SeafoodTopping
+                                 ] ;
+                 rdfs:comment "Pizza where main ingredient seafood"@en ;
+                 rdfs:label "Seafood_Pizza"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/SeafoodTopping
+ibs:SeafoodTopping rdf:type owl:Class ;
+                   rdfs:subClassOf ibs:Topping ;
+                   rdfs:comment "Food toppings where seafood is the main ingredient"@en ;
+                   rdfs:label "Seafood_Topping"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Special_Pizza
+ibs:Special_Pizza rdf:type owl:Class ;
+                  rdfs:subClassOf ibs:Pizza ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ibs:hasTopping ;
+                                    owl:someValuesFrom ibs:Special_Topping
+                                  ] ;
+                  rdfs:comment "Pizza where main ingredient is special items"@en ;
+                  rdfs:label "Special_Pizza"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Special_Topping
+ibs:Special_Topping rdf:type owl:Class ;
+                    rdfs:subClassOf ibs:Topping .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/SportsBar
+ibs:SportsBar rdf:type owl:Class ;
+              rdfs:subClassOf ibs:Restaurant ;
+              rdfs:comment "Restaurant which mainly serves foods and drinks and sports are televised"@en ;
+              rdfs:label "Sports_Bar"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/State
+ibs:State rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty ibs:isLocatedAt ;
+                            owl:someValuesFrom ibs:Country
+                          ] ;
+          rdfs:comment "Place in a country"@en ;
+          rdfs:label "State"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Topping
+ibs:Topping rdf:type owl:Class ;
+            rdfs:comment "Ingredients used on top of foods"@en ;
+            rdfs:label "Topping"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/University
+ibs:University rdf:type owl:Class ;
+               rdfs:subClassOf ibs:Restaurant ;
+               rdfs:comment "Place people goes to study"@en ;
+               rdfs:label "University"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/VegetarianPizza
+ibs:VegetarianPizza rdf:type owl:Class ;
+                    rdfs:subClassOf ibs:Pizza ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ibs:hasTopping ;
+                                      owl:allValuesFrom ibs:VegetarianTopping
+                                    ] ;
+                    rdfs:comment "Pizza where main ingredient is vegetables"@en ;
+                    rdfs:label "Vegetarian_Pizza"@en .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/VegetarianTopping
+ibs:VegetarianTopping rdf:type owl:Class ;
+                      rdfs:subClassOf ibs:Topping ;
+                      rdfs:comment "Food toppings where vegetables is the main ingredient"@en ;
+                      rdfs:label "Vegetarian_Topping"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bangla_Pizza
+ibs:Bangla_Pizza rdf:type owl:NamedIndividual ,
+                          ibs:Special_Pizza ;
+                 ibs:isServedAt ibs:Ibtida_Syed_Restaurant ;
+                 ibs:hasPrice 10.5 ;
+                 rdfs:comment "Created pizza" ;
+                 rdfs:label "Bangla_Pizza" .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bangladesh
+ibs:Bangladesh rdf:type owl:NamedIndividual ,
+                        ibs:Country ;
+               rdfs:comment "Created Country" ;
+               rdfs:label "Bangladesh" .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bend
+ibs:Bend rdf:type owl:NamedIndividual ,
+                  ibs:City ;
+         ibs:hasRestaurant ibs:Little_Pizza_Paradise ;
+         ibs:isLocatedAt ibs:Oregon .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bianca_Pizza
+ibs:Bianca_Pizza rdf:type owl:NamedIndividual ,
+                          ibs:VegetarianPizza ;
+                 ibs:isServedAt ibs:Little_Pizza_Paradise ;
+                 ibs:hasPrice 22.5 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Bravo_Pizza_Hollywood
+ibs:Bravo_Pizza_Hollywood rdf:type owl:NamedIndividual ,
+                                   ibs:Pizza_place ;
+                          ibs:hasPizza ibs:Cheese_Pizza ,
+                                       ibs:Hawaiian_Pizza ,
+                                       ibs:Meat_Lover_Pizza ,
+                                       ibs:Pizza_Sub ,
+                                       ibs:Super_Pizza_Sub ,
+                                       ibs:Veggie_Pizza ;
+                          ibs:isLocatedAt ibs:Los_Angeles ;
+                          ibs:hasAddress "5142 Hollywood Blvd" ;
+                          ibs:hasPostCode 90027 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Brigham_Young_University
+ibs:Brigham_Young_University rdf:type owl:NamedIndividual ,
+                                      ibs:University ;
+                             ibs:hasPizza ibs:House_made_pizza ,
+                                          ibs:Pepperoni_Pizza ,
+                                          ibs:Pizza_Bagel ;
+                             ibs:isLocatedAt ibs:Provo ;
+                             ibs:hasAddress "1 N University Hl" ;
+                             ibs:hasPostCode 84602 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/California
+ibs:California rdf:type owl:NamedIndividual ,
+                        ibs:State ;
+               ibs:isLocatedAt ibs:USA .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Cheese_Pizza
+ibs:Cheese_Pizza rdf:type owl:NamedIndividual ,
+                          ibs:CheesePizza ;
+                 ibs:isServedAt ibs:Bravo_Pizza_Hollywood ,
+                                ibs:Little_Pizza_Paradise ,
+                                ibs:Roadhouse_Cafe ;
+                 ibs:hasPrice 10.99 ,
+                              18.95 ,
+                              8.95 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Chicago
+ibs:Chicago rdf:type owl:NamedIndividual ,
+                     ibs:City ;
+            ibs:hasRestaurant <http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Francesca's_on_Chestnut> ;
+            ibs:isLocatedAt ibs:Illinois .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Create_your_own_pizza
+ibs:Create_your_own_pizza rdf:type owl:NamedIndividual ,
+                                   ibs:Special_Pizza ;
+                          ibs:isServedAt <http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Lucky's_Pub> ;
+                          ibs:hasPrice 9.95 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Dhaka
+ibs:Dhaka rdf:type owl:NamedIndividual ,
+                   ibs:City ;
+          ibs:hasRestaurant ibs:Ibtida_Syed_Restaurant ;
+          ibs:isLocatedAt ibs:Bangladesh ;
+          rdfs:comment "Created City" ;
+          rdfs:label "Dhaka" .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Hawaiian_Pizza
+ibs:Hawaiian_Pizza rdf:type owl:NamedIndividual ,
+                            ibs:MeatPizza ;
+                   ibs:isServedAt ibs:Bravo_Pizza_Hollywood ;
+                   ibs:hasPrice 11.99 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/House_made_pizza
+ibs:House_made_pizza rdf:type owl:NamedIndividual ,
+                              ibs:Special_Pizza ;
+                     ibs:isServedAt ibs:Brigham_Young_University .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Houston
+ibs:Houston rdf:type owl:NamedIndividual ,
+                     ibs:City ;
+            ibs:hasRestaurant <http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Lucky's_Pub> ;
+            ibs:isLocatedAt ibs:Texas .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Hyannis
+ibs:Hyannis rdf:type owl:NamedIndividual ,
+                     ibs:City ;
+            ibs:hasRestaurant ibs:Roadhouse_Cafe ;
+            ibs:isLocatedAt ibs:Maine .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Ibtida_Syed_Restaurant
+ibs:Ibtida_Syed_Restaurant rdf:type owl:NamedIndividual ,
+                                    ibs:Bangla_Food ;
+                           ibs:hasPizza ibs:Bangla_Pizza ;
+                           ibs:isLocatedAt ibs:Dhaka ;
+                           ibs:hasAddress "Gulshan" ;
+                           ibs:hasPostCode 1217 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Illinois
+ibs:Illinois rdf:type owl:NamedIndividual ,
+                      ibs:State ;
+             ibs:isLocatedAt ibs:USA .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Little_Pizza_Paradise
+ibs:Little_Pizza_Paradise rdf:type owl:NamedIndividual ,
+                                   ibs:Pizza_place ;
+                          ibs:hasPizza ibs:Bianca_Pizza ,
+                                       ibs:Cheese_Pizza ;
+                          ibs:isLocatedAt ibs:Bend ;
+                          ibs:hasAddress "Cascade Village Mall Across From Target" ;
+                          ibs:hasPostCode 97701 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Los_Angeles
+ibs:Los_Angeles rdf:type owl:NamedIndividual ,
+                         ibs:City ;
+                ibs:hasRestaurant ibs:Bravo_Pizza_Hollywood ,
+                                  ibs:The_Brentwood ;
+                ibs:isLocatedAt ibs:California .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Maine
+ibs:Maine rdf:type owl:NamedIndividual ,
+                   ibs:State ;
+          ibs:isLocatedAt ibs:USA .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Margherita_Pizza
+ibs:Margherita_Pizza rdf:type owl:NamedIndividual ,
+                              ibs:CheesePizza ;
+                     ibs:isServedAt ibs:The_Brentwood ,
+                                    <http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Francesca's_on_Chestnut> ;
+                     ibs:hasPrice 10.99 ,
+                                  12 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Meat_Lover_Pizza
+ibs:Meat_Lover_Pizza rdf:type owl:NamedIndividual ,
+                              ibs:MeatPizza ;
+                     ibs:isServedAt ibs:Bravo_Pizza_Hollywood ;
+                     ibs:hasPrice 16.99 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Mushroom_Pizza
+ibs:Mushroom_Pizza rdf:type owl:NamedIndividual ,
+                            ibs:VegetarianPizza ;
+                   ibs:isServedAt ibs:The_Brentwood ;
+                   ibs:hasPrice 13 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Oregon
+ibs:Oregon rdf:type owl:NamedIndividual ,
+                    ibs:State ;
+           ibs:isLocatedAt ibs:USA .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pepperoni_Pizza
+ibs:Pepperoni_Pizza rdf:type owl:NamedIndividual ,
+                             ibs:MeatPizza ;
+                    ibs:isServedAt ibs:Brigham_Young_University ,
+                                   ibs:Roadhouse_Cafe ;
+                    ibs:hasPrice 10.95 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza_Bagel
+ibs:Pizza_Bagel rdf:type owl:NamedIndividual ,
+                         ibs:Special_Pizza ;
+                ibs:isServedAt ibs:Brigham_Young_University .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Pizza_Sub
+ibs:Pizza_Sub rdf:type owl:NamedIndividual ,
+                       ibs:Special_Pizza ;
+              ibs:isServedAt ibs:Bravo_Pizza_Hollywood ;
+              ibs:hasPrice 5.99 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Provo
+ibs:Provo rdf:type owl:NamedIndividual ,
+                   ibs:City ;
+          ibs:hasRestaurant ibs:Brigham_Young_University ;
+          ibs:isLocatedAt ibs:Utah .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Puttanesca_Pizza
+ibs:Puttanesca_Pizza rdf:type owl:NamedIndividual ,
+                              ibs:SeafoodPizza ;
+                     ibs:isServedAt ibs:The_Brentwood ;
+                     ibs:hasPrice 13 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Roadhouse_Cafe
+ibs:Roadhouse_Cafe rdf:type owl:NamedIndividual ,
+                            ibs:AmericanRestaurant ;
+                   ibs:isLocatedAt ibs:Hyannis ;
+                   ibs:hasAddress "478 South St" ;
+                   ibs:hasPostCode 2601 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Salami_Piccante_Pizza
+ibs:Salami_Piccante_Pizza rdf:type owl:NamedIndividual ,
+                                   ibs:MeatPizza ;
+                          ibs:isServedAt ibs:The_Brentwood ;
+                          ibs:hasPrice 15 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Schiacchiata_Alla_Toscana_Pizza
+ibs:Schiacchiata_Alla_Toscana_Pizza rdf:type owl:NamedIndividual ,
+                                             ibs:Special_Pizza ;
+                                    ibs:isServedAt <http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Francesca's_on_Chestnut> .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Super_Pizza_Sub
+ibs:Super_Pizza_Sub rdf:type owl:NamedIndividual ,
+                             ibs:Special_Pizza ;
+                    ibs:isServedAt ibs:Bravo_Pizza_Hollywood ;
+                    ibs:hasPrice 5.99 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Texas
+ibs:Texas rdf:type owl:NamedIndividual ,
+                   ibs:State ;
+          ibs:isLocatedAt ibs:USA .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/The_Brentwood
+ibs:The_Brentwood rdf:type owl:NamedIndividual ,
+                           ibs:AmericanRestaurant ;
+                  ibs:hasPizza ibs:Margherita_Pizza ,
+                               ibs:Mushroom_Pizza ,
+                               ibs:Puttanesca_Pizza ,
+                               ibs:Salami_Piccante_Pizza ,
+                               ibs:White_Truffle_Meat_Sauce_Pizza ;
+                  ibs:isLocatedAt ibs:Los_Angeles ;
+                  ibs:hasAddress "148 S Barrington Ave" ;
+                  ibs:hasPostCode 90049 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/USA
+ibs:USA rdf:type owl:NamedIndividual ,
+                 ibs:Country .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Utah
+ibs:Utah rdf:type owl:NamedIndividual ,
+                  ibs:State ;
+         ibs:isLocatedAt ibs:USA .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Veggie_Pizza
+ibs:Veggie_Pizza rdf:type owl:NamedIndividual ,
+                          ibs:VegetarianPizza ;
+                 ibs:isServedAt ibs:Bravo_Pizza_Hollywood ;
+                 ibs:hasPrice 16.99 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/White_Truffle_Meat_Sauce_Pizza
+ibs:White_Truffle_Meat_Sauce_Pizza rdf:type owl:NamedIndividual ,
+                                            ibs:MeatPizza ;
+                                   ibs:isServedAt ibs:The_Brentwood ;
+                                   ibs:hasPrice 15 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Francesca's_on_Chestnut
+<http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Francesca's_on_Chestnut> rdf:type owl:NamedIndividual ,
+                                                                                        ibs:ItalianRestaurant ;
+                                                                               ibs:isLocatedAt ibs:Chicago ;
+                                                                               ibs:hasAddress "200 E Chestnut St" ;
+                                                                               ibs:hasPostCode 60611 .
+
+
+###  http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Lucky's_Pub
+<http://www.city.ac.uk/inm713-in3067/2023/ibtida_syed/Lucky's_Pub> rdf:type owl:NamedIndividual ,
+                                                                            ibs:Pub ;
+                                                                   ibs:hasPizza ibs:Create_your_own_pizza ;
+                                                                   ibs:isLocatedAt ibs:Houston ;
+                                                                   ibs:hasAddress "801 Saint Emanuel St" ;
+                                                                   ibs:hasPostCode 77003 .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( ibs:AmericanRestaurant
+                ibs:AsianRestaurant
+                ibs:BreakfastSpot
+                ibs:BurgerJoint
+                ibs:CoffeeShop
+                ibs:ItalianRestaurant
+                ibs:MediterranianRestaurant
+                ibs:MexicanRestaurant
+                ibs:Pizza_place
+                ibs:Pub
+                ibs:SportsBar
+                ibs:University
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( ibs:CheesePizza
+                ibs:MeatPizza
+                ibs:SeafoodPizza
+                ibs:VegetarianPizza
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( ibs:CheeseTopping
+                ibs:MeatTopping
+                ibs:SeafoodTopping
+                ibs:VegetarianTopping
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
